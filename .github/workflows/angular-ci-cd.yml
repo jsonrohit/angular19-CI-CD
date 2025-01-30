@@ -25,7 +25,7 @@ jobs:
         run: npm run build -- --configuration production
 
       - name: Make docs folder
-        run: cd touch ./dist/my-angular-app/docs
+        run: cd mkdir ./dist/my-angular-app/docs
 
       - name: Add .nojekyll file
         run: |
