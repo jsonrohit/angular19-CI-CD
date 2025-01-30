@@ -1,40 +1,31 @@
-name: Angular CI/CD
+name: Deploy Angular to GitHub Pages
 
 on:
   push:
     branches:
-      - master
-  pull_request:
-    branches:
-      - master
+      - master  # Runs on push to the main branch
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
-      # Checkout the repository
       - name: Checkout repository
-        uses: actions/checkout@v2
-      
-      # Set up Node.js environment
+        uses: actions/checkout@v3
+
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '22'
-      
-      # Install dependencies
+
       - name: Install dependencies
         run: npm install
-      
-      # Build the Angular project
+
       - name: Build Angular project
         run: npm run build --prod
 
-      # Deploy to GitHub Pages (or another service like Firebase, AWS, etc.)
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages  # This is where the deployed code will go
-          folder: dist/my-angular-app  # The folder to deploy (output folder after build)
-          token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # No need to set manually for public repos
+          publish_dir: ./dist/my-angular-app  # Change this to match your Angular output folder
