@@ -24,11 +24,6 @@ jobs:
           ruby-version: '3'
 
       - name: Install dependencies
-        run: |
-          gem install bundler
-          bundle install
-
-      - name: Install dependencies
         run: npm install
 
       - name: Build Angular project
