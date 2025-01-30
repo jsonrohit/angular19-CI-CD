@@ -33,7 +33,7 @@ jobs:
 
       # Deploy to GitHub Pages (or another service like Firebase, AWS, etc.)
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.2.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages  # This is where the deployed code will go
           folder: dist/my-angular-app  # The folder to deploy (output folder after build)
