@@ -29,6 +29,9 @@ jobs:
           cd ./dist/<project-name>  # Replace <project-name> with your Angular project name
           touch .nojekyll
           ls -la  # List files to verify .nojekyll is present
+    
+      - name: List files in deployment folder
+        run: ls -la ./dist/my-angular-app
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
