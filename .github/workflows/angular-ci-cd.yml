@@ -26,7 +26,7 @@ jobs:
 
       - name: Add .nojekyll file
         run: |
-          cd ./dist/<project-name>  # Replace <project-name> with your Angular project name
+          cd ./dist/my-angular-app  # Replace <project-name> with your Angular project name
           touch .nojekyll
           ls -la  # List files to verify .nojekyll is present
     
