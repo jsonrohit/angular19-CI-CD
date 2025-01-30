@@ -1,10 +1,10 @@
 name: Angular CI/CD Pipeline
 
-# Trigger the workflow on push to the main branch
+# Trigger the workflow on push to the master branch
 on:
   push:
     branches:
-      - main
+      - master
 
 # Jobs to run
 jobs:
@@ -20,7 +20,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 22
 
       # Install dependencies
       - name: Install dependencies
@@ -38,5 +38,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages  
           publish_dir: ./dist/my-angular-app  # Replace <project-name> with your Angular project name
+          github_token: ${{ secrets.GITHUB_TOKEN }}
