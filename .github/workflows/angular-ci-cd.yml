@@ -1,43 +1,40 @@
-name: Angular CI/CD Pipeline
+name: Angular CI/CD
 
-# Trigger the workflow on push to the master branch
 on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 
-# Jobs to run
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
     steps:
-      # Check out the repository
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      # Set up Node.js
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      # Set up Node.js environment
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
-          node-version: 22
-
+          node-version: '22'
+      
       # Install dependencies
       - name: Install dependencies
         run: npm install
-
-      # Run tests (optional)
-      - name: Run tests
-        run: npm test
-
+      
       # Build the Angular project
       - name: Build Angular project
-        run: npm run build -- --configuration production
+        run: npm run build --prod
 
-      # Deploy to GitHub Pages
+      # Deploy to GitHub Pages (or another service like Firebase, AWS, etc.)
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4.2.1
         with:
-          branch: gh-pages  
-          publish_dir: ./dist/my-angular-app  # Replace <project-name> with your Angular project name
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages  # This is where the deployed code will go
+          folder: dist/my-angular-app  # The folder to deploy (output folder after build)
+          token: ${{ secrets.GITHUB_TOKEN }}
