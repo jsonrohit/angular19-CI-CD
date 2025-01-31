@@ -18,36 +18,17 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3'
-
-      - name: Install dependencies
-        run: bundle install
-
-      - name: Build with Jekyll
-        run: |
-          cd docs # Change to the correct directory if necessary
-          bundle exec jekyll build
-
       - name: Install dependencies
         run: npm install
 
       - name: Build Angular project
         run: npm run build -- --configuration production
 
+      - name: Deploy to GitHub Pages
+        run: npx angular-cli-ghpages --dir=dist/your-angular-project
+
       - name: Make docs folder
         run: mkdir -p ./dist/my-angular-app/docs
-
-      - name: Add .nojekyll file
-        run: |
-          cd ./dist/my-angular-app  # Replace <project-name> with your Angular project name
-          touch .nojekyll
-          ls -la  # List files to verify .nojekyll is present
-    
-      - name: List files in deployment folder
-        run: ls -la ./dist/my-angular-app
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
