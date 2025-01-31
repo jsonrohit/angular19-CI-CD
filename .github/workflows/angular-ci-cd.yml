@@ -24,6 +24,14 @@ jobs:
           ruby-version: '3'
 
       - name: Install dependencies
+        run: bundle install
+
+      - name: Build with Jekyll
+        run: |
+          cd docs # Change to the correct directory if necessary
+          bundle exec jekyll build
+
+      - name: Install dependencies
         run: npm install
 
       - name: Build Angular project
@@ -37,10 +45,6 @@ jobs:
           cd ./dist/my-angular-app  # Replace <project-name> with your Angular project name
           touch .nojekyll
           ls -la  # List files to verify .nojekyll is present
-        
-      - name: Build the site
-        run: |
-          bundle exec jekyll build
     
       - name: List files in deployment folder
         run: ls -la ./dist/my-angular-app
