@@ -17,7 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/my-angular-app",
+            "outputPath": "dist/angular19-CI-CD",
+            "baseHref": "/angular19-CI-CD/",
+            "deployUrl": "/angular19-CI-CD/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -55,8 +57,10 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
-            },
+              "outputHashing": "all",
+              "outputPath": "dist/angular19-CI-CD",
+              "baseHref": "/angular19-CI-CD/",
+              "deployUrl": "/angular19-CI-CD/",
             "development": {
               "optimization": false,
               "extractLicenses": false,
