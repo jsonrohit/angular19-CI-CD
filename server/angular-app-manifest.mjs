@@ -2,19 +2,19 @@
 export default {
   bootstrap: () => import('./main.server.mjs').then(m => m.default),
   inlineCriticalCss: true,
-  baseHref: '/',
+  baseHref: 'https://jsonrohit.github.io/angular19-CI-CD/',
   locale: undefined,
   routes: [
   {
     "renderMode": 2,
-    "route": "/"
+    "route": "/https:/jsonrohit.github.io/angular19-CI-CD"
   }
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 496, hash: 'a0a1d7b3dffa86b840c6c2a1ca7addc9e14447263e2482a79973d4677af3bb5b', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 1009, hash: 'd7da7ab1200357e4199aac5e50483aab1a8dfc4e496dec699b7cc7046b7b54f1', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
-    'index.html': {size: 14999, hash: 'f5003369b1054097581611715b9615ea811475760407bcd1f883b5e9e202fe7b', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
+    'index.csr.html': {size: 539, hash: 'ae9243bf7cb2d8aa837e92259542de1d4f663f97745ebd2fd875e45b193b5991', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 1052, hash: '1d0d466e76d36af234b2e6aee45174f75985f80593edcbe7c5e6ea519975428d', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'https:/jsonrohit.github.io/angular19-CI-CD/index.html': {size: 15042, hash: '82a0c2a2b9b74b45e748d255826db1353a59f4b1e48035b698b4eede627a015f', text: () => import('./assets-chunks/https:_jsonrohit_github_io_angular19-CI-CD_index_html.mjs').then(m => m.default)},
     'styles-5INURTSO.css': {size: 0, hash: 'menYUTfbRu8', text: () => import('./assets-chunks/styles-5INURTSO_css.mjs').then(m => m.default)}
   },
 };

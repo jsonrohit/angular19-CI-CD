@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/',
+  basePath: 'https://jsonrohit.github.io/angular19-CI-CD',
   supportedLocales: {
   "en-US": ""
 },
