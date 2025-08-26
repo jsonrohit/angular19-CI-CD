@@ -10,5 +10,4 @@ export default `<!doctype html>
 <body ngcm="">
   <app-root></app-root>
 <script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-ALAQTK4U.js" type="module"></script></body>
-</html>
-`;
+</html>`;
