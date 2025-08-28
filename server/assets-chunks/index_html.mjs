@@ -10,4 +10,6 @@ export default `<!DOCTYPE html><html lang="en" data-beasties-container><head>
 <script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-ALAQTK4U.js" type="module"></script>
 
 
+
+
 <script id="ng-state" type="application/json">{"__nghData__":[{"c":{"23":[]}}]}</script></body></html>`;
