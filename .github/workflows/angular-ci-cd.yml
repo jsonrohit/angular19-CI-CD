@@ -26,10 +26,10 @@ jobs:
         run: npm install
 
       - name: Build Angular Project
-        run: npm run build -- --configuration production --base-href /angular19-CI-CD/
+        run: npm run build -- --configuration production --base-href /angular19-CI-CD/browser/index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/angular19-CI-CD
+          publish_dir: dist/angular19-CI-CD
