@@ -39,8 +39,7 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            },
-            "baseHref": "/angular19-CI-CD/"
+            }
           },
           "configurations": {
             "production": {
