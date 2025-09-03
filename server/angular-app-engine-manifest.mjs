@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/angular19-CI-CD/browser/index.html',
+  basePath: '/angular19-CI-CD',
   supportedLocales: {
   "en-US": ""
 },
