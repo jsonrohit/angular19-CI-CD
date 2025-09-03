@@ -1,5 +1,5 @@
 {
   "routes": {
-    "/angular19-CI-CD": {}
+    "/angular19-CI-CD/browser/index.html": {}
   }
 }
