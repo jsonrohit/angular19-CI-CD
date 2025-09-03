@@ -27,12 +27,9 @@ jobs:
 
       - name: Build Angular Project
         run: npm run build -- --configuration production --base-href /angular19-CI-CD/
-    
-      - name: Fix routing for GitHub Pages
-        run: cp dist/angular19-CI-CD/index.html dist/angular19-CI-CD/404.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist/angular19-CI-CD
+          publish_dir: ./dist/angular19-CI-CD
