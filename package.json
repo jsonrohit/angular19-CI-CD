@@ -1,5 +1,5 @@
 {
-  "name": "angular19-CI-CD",
+  "name": "my-angular-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,8 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:angular19-CI-CD": "node dist/angular19-CI-CD/server/server.mjs",
-    "homepage": "https://jsonrohit.github.io/angular19-CI-CD/"
+    "serve:ssr:my-angular-app": "node dist/my-angular-app/server/server.mjs"
   },
   "private": true,
   "dependencies": {
